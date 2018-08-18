@@ -6,10 +6,15 @@
 //It must explicitly say it wants acess to the info
 import React from 'react'; //go get the app called React and assign it to variable 'react'
 import ReactDom from 'react-dom';
+import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar'; //if we write the code imported, need file reference.
-//youtube key
-const API_KEY = 'key=AIzaSyChxDVncrFFW30mmRD9z1wvIUjEYwhYwUw';
 
+//youtube key
+const API_KEY = 'AIzaSyDYeVbyulXF2JnCslwmRm3RW6KD9VphJj4';
+
+YTSearch({key: API_KEY, term: 'surfboards'}, function (data){
+console.log(data);
+});
 //install youtube api search npm package.
 //const is ES6 -
 // () => fat arrow, like saying function()
@@ -20,8 +25,6 @@ const App =  () => {
     </div> //this is
     );
 }
-
-
 
 // Take this component's generated HTML and put it on the page.
 ReactDom.render(<App/>, document.querySelector('.container'));
